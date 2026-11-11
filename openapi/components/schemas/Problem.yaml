@@ -1,0 +1,26 @@
+type: object
+description: |
+  Erro padronizado no formato Problem Details (RFC 9457), usado por todas as
+  respostas de erro da API.
+required:
+  - title
+  - status
+properties:
+  type:
+    type: string
+    format: uri-reference
+    description: Identificador do tipo de erro.
+    default: about:blank
+  title:
+    type: string
+    description: Resumo curto do erro.
+  status:
+    type: integer
+    description: Código HTTP da resposta.
+  detail:
+    type: string
+    description: Explicação específica desta ocorrência.
+  instance:
+    type: string
+    format: uri-reference
+    description: Identificador desta ocorrência.

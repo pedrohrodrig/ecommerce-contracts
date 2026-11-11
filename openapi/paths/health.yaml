@@ -1,0 +1,18 @@
+get:
+  operationId: getHealth
+  summary: Verifica se a API está saudável
+  description: |
+    Endpoint usado por load balancers e pelo Kubernetes. Não exige
+    autenticação.
+  tags:
+    - system
+  security: []
+  responses:
+    '200':
+      description: API saudável.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/HealthStatus.yaml
+    '503':
+      $ref: ../components/responses/ServiceUnavailable.yaml

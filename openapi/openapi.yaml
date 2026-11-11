@@ -1,0 +1,20 @@
+openapi: 3.1.0
+info:
+  title: E-commerce da Ótica API
+  version: 0.1.0
+  description: |
+    Contrato HTTP oficial entre os frontends (loja e admin) e o backend.
+
+    Arquivos em `generated/` são gerados a partir deste contrato e não devem
+    ser editados manualmente.
+servers:
+  - url: http://localhost:8080
+    description: Desenvolvimento local
+  - url: https://api.dominio.com.br
+    description: Produção
+tags:
+  - name: system
+    description: Operação e saúde da API.
+paths:
+  /health:
+    $ref: paths/health.yaml

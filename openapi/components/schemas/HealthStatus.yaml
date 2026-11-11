@@ -1,0 +1,10 @@
+type: object
+description: Estado de saúde da API.
+required:
+  - status
+properties:
+  status:
+    type: string
+    enum:
+      - ok
+    description: Sempre `ok` quando a API responde 200.
