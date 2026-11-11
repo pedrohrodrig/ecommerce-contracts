@@ -1,8 +1,9 @@
 {
-  // Formata com o Prettier do projeto (mesma versão e regras do CI).
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // Formatação e lint pela extensão Oxc, usando o oxfmt (.oxfmtrc.json) e o
+  // oxlint (.oxlintrc.json) do projeto, os mesmos do CI.
+  "editor.defaultFormatter": "oxc.oxc-vscode",
   "editor.formatOnSave": true,
-  "prettier.requireConfig": true,
+  "oxc.fmt.experimental": true,
   "files.eol": "\n",
 
   // Arquivos gerados não devem ser editados.
