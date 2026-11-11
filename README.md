@@ -18,11 +18,11 @@ futuramente Go) são gerados a partir dele.
 
 ```bash
 pnpm install          # instala as dependências
-pnpm lint             # valida o contrato (Redocly)
+pnpm lint             # valida o contrato (Redocly) e o código JS/TS (oxlint)
 pnpm generate         # gera generated/typescript/schema.d.ts
 pnpm check:generated  # falha se os tipos gerados estiverem desatualizados
 pnpm typecheck        # compila os tipos gerados
-pnpm format           # formata com Prettier
+pnpm format           # formata com oxfmt
 pnpm format:check     # verifica a formatação
 pnpm bundle           # junta o contrato em um arquivo: dist/openapi.yaml
 pnpm build:docs       # documentação HTML navegável: dist/docs.html
@@ -38,17 +38,22 @@ pnpm build:docs       # documentação HTML navegável: dist/docs.html
 - **[openapi-typescript](https://openapi-ts.dev/)**: gera os tipos TypeScript
   que os frontends vão consumir. Configurado em `redocly.yaml`
   (`x-openapi-ts.output`). Exige TypeScript 5.x, por isso o projeto não usa o 7.
-- **[Prettier](https://prettier.io/)**: formata YAML, JSON e Markdown, com as
-  mesmas regras da Mistral UI. O Redocly não verifica formatação, então os dois
-  não conflitam.
+- **[oxfmt](https://oxc.rs/docs/guide/usage/formatter)**: formata YAML, JSON e
+  Markdown ([`.oxfmtrc.json`](.oxfmtrc.json)), com as mesmas regras do admin e
+  da Mistral UI. O Redocly não verifica formatação, então os dois não
+  conflitam.
+- **[oxlint](https://oxc.rs/docs/guide/usage/linter)**: mesmo linter do admin
+  ([`.oxlintrc.json`](.oxlintrc.json)). Hoje não há código JS/TS escrito à mão
+  (só os tipos gerados, que ficam fora do lint); ele passa a valer quando
+  surgirem scripts em `scripts/`.
 
 ## VS Code
 
 O VS Code sugere as extensões de
 [`.vscode/extensions.json`](.vscode/extensions.json):
 
-- **Prettier** (`esbenp.prettier-vscode`): formata ao salvar, usando a versão e
-  a configuração do projeto.
+- **Oxc** (`oxc.oxc-vscode`): formata com o oxfmt ao salvar e mostra os avisos
+  do oxlint, usando a configuração do projeto.
 - **Redocly OpenAPI** (`redocly.openapi-vs-code`): autocompletar, navegação por
   `$ref`, pré-visualização e lint do contrato no editor.
 - **EditorConfig** (`editorconfig.editorconfig`).

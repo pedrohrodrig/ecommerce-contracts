@@ -33,10 +33,10 @@ jobs:
       - name: Instalar dependências
         run: pnpm install --frozen-lockfile
 
-      - name: Lint do contrato (Redocly)
+      - name: Lint (Redocly + oxlint)
         run: pnpm lint
 
-      - name: Prettier
+      - name: oxfmt
         run: pnpm format:check
 
   generated:
