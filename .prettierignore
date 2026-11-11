@@ -1,0 +1,5 @@
+node_modules/
+dist/
+pnpm-lock.yaml
+# Arquivos gerados: o formato é responsabilidade do gerador.
+generated/

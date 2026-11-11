@@ -1,0 +1,28 @@
+{
+  "name": "ecommerce-contracts",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Contratos HTTP (OpenAPI) do e-commerce da ótica",
+  "license": "UNLICENSED",
+  "type": "module",
+  "packageManager": "pnpm@12.18.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "lint": "redocly lint",
+    "bundle": "redocly bundle openapi/openapi.yaml -o dist/openapi.yaml",
+    "build:docs": "redocly build-docs openapi/openapi.yaml -o dist/docs.html",
+    "generate": "openapi-typescript",
+    "check:generated": "pnpm generate && git diff --exit-code -- generated/",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@redocly/cli": "^2.77.0",
+    "openapi-typescript": "^7.13.0",
+    "prettier": "^3.9.10",
+    "typescript": "^5.9.3"
+  }
+}

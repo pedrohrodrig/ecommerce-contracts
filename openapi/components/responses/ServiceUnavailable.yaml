@@ -1,0 +1,5 @@
+description: API indisponível (por exemplo, sem conexão com o banco).
+content:
+  application/problem+json:
+    schema:
+      $ref: ../schemas/Problem.yaml

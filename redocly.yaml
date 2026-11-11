@@ -1,0 +1,17 @@
+# Configuração do Redocly CLI (lint, bundle e docs) e do openapi-typescript.
+# Regras: https://redocly.com/docs/cli/rules/built-in-rules
+apis:
+  ecommerce:
+    root: openapi/openapi.yaml
+    x-openapi-ts:
+      output: generated/typescript/schema.d.ts
+
+extends:
+  - recommended
+
+rules:
+  # Projeto privado, sem licença pública.
+  info-license: off
+  info-license-strict: off
+  # Precisamos do servidor http://localhost:8080 para desenvolvimento local.
+  no-server-example.com: off
