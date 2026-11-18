@@ -1,4 +1,3 @@
-# Configuração do Redocly CLI (lint, bundle e docs) e do openapi-typescript.
 # Regras: https://redocly.com/docs/cli/rules/built-in-rules
 apis:
   ecommerce:

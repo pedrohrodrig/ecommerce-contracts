@@ -1,12 +1,9 @@
 {
-  // Formatação e lint pela extensão Oxc, usando o oxfmt (.oxfmtrc.json) e o
-  // oxlint (.oxlintrc.json) do projeto, os mesmos do CI.
   "editor.defaultFormatter": "oxc.oxc-vscode",
   "editor.formatOnSave": true,
   "oxc.fmt.experimental": true,
   "files.eol": "\n",
 
-  // Arquivos gerados não devem ser editados.
   "files.readonlyInclude": {
     "generated/**": true
   }
