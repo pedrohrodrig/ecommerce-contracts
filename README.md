@@ -85,5 +85,5 @@ Notion do projeto.
 ## CI
 
 [`.github/workflows/ci.yml`](.github/workflows/ci.yml) roda em PRs e pushes para
-`develop` e `main`: lint do contrato e formatação; tipos gerados atualizados,
+`dev` e `main`: lint do contrato e formatação; tipos gerados atualizados,
 typecheck e bundle.
